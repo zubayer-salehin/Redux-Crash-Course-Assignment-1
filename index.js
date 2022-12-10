@@ -38,7 +38,7 @@ const run = async () => {
       res.send(result);
     });
 
-    app.patch("/course/:id", async (req, res) => {
+    app.put("/course/:id", async (req, res) => {
       const id = req.params.id;
       const updateCourse = req.body;
       const result = await courseCollection.updateOne({ _id: ObjectId(id) }, { $set: updateCourse });
